@@ -1,9 +1,10 @@
 import React from 'react';
 import {Header} from '../components/header.js';
 import {AddHobby} from '../components/addHobby.js';
-import {HobbyList} from '../components/hobbyList.js';
+import {HobbyList} from '../components/hobbyList.js'
 
 class Home extends React.Component {
+
   render() {
     return (
       <div>
@@ -15,6 +16,7 @@ class Home extends React.Component {
       </div>
     );
   }
+  
 }
 
 module.exports.Home = Home;

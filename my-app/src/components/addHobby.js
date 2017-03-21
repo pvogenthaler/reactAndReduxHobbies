@@ -1,31 +1,30 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {addHobby} from '../actions';
 
 class AddHobby extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-  }
-
   render() {
+    let input;
+
     return (
-      <form onSubmit={this.handleSubmit} className="hobbyForm">
-        <input type="text" value={this.state.value} onChange={this.handleChange} className="hobbyInput"/>
-        <input type="submit" value="Add" className="hobbySubmit" />
+      <form className="hobbyForm" onSubmit={e => {
+        e.preventDefault()
+        if (!input.value.trim()) {
+          return;
+        }
+        this.props.dispatch(addHobby(input.value));
+        input.value = '';
+      }}>
+        <input className="hobbyInput" ref={node => {
+          input = node;
+        }}
+      />
+        <input className="hobbySubmit" type="submit" value="Add"/>
       </form>
     );
   }
+
 }
 
-module.exports.AddHobby = AddHobby;
+module.exports.AddHobby = connect()(AddHobby);;
