@@ -31,6 +31,6 @@ HobbyList.propTypes = {
 
 const mapStateToProps = (state) => ({
   hobbies: state.hobbies
-})
+});
 
 module.exports.HobbyList = connect(mapStateToProps)(HobbyList);
