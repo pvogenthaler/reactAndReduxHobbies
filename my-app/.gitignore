@@ -15,4 +15,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.sass-cache/1f80a2cb880b8c94bda5b3fcf40f541d722068ce/
+/.sass-cache
