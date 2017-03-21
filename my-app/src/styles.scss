@@ -60,6 +60,9 @@ html, body, #root, #root > div, [data-reactroot] {
   .hobbyListContainer {
     @include basicComponentStyles($hobby-list-color, 25px, 6px);
     width: 50%;
-    ul { list-style: none; }
+    ul {
+      list-style: none;
+      li { margin-bottom: 15px; }
+    }
   }
 }
