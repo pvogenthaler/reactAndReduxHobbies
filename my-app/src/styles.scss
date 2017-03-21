@@ -1,12 +1,19 @@
-$header-color: rgb(249, 254, 178);
-$add-hobby-color: rgb(178, 254, 223);
-$hobby-list-color: rgb(221, 245, 255);
+$header-color: rgb(254, 248, 178);
+$add-hobby-color: rgb(156, 232, 201);
+$hobby-list-color: rgb(197, 238, 255);
 
 @mixin basicComponentStyles($color, $padding:25px, $margin:0) {
   display: block;
   background: $color;
   padding: $padding;
   margin: $margin;
+}
+
+@mixin flexBox($direction:row, $justify:center, $align:center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 html, body, #root, #root > div, [data-reactroot] {
@@ -24,27 +31,35 @@ html, body, #root, #root > div, [data-reactroot] {
   right: 0;
   text-align: center;
   font-size: 24px;
-  h1 {
-    margin: 0;
-  }
+  h1 { margin: 0; }
 }
 
 .hobbiesContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include flexBox(row, center, flex-start);
+  width: 75%;
+  margin: auto;
   padding: 6px;
 
   .hobbyForm {
     @include basicComponentStyles($add-hobby-color, 25px, 6px);
-    padding-right: 150px;
+    @include flexBox(row, flex-start, center);
+    width: 50%;
+    height: 60px;
     .hobbyInput, .hobbySubmit {
       margin: 3px;
       height: 24px;
     }
+    .hobbyInput { width: 40%; }
+    .hobbySubmit {
+      background-color: ghostwhite;
+      color: dimgrey;
+      border-radius: 2px;
+    }
   }
 
-  .hobbyList {
+  .hobbyListContainer {
     @include basicComponentStyles($hobby-list-color, 25px, 6px);
+    width: 50%;
+    ul { list-style: none; }
   }
 }

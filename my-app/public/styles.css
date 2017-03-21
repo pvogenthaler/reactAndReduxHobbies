@@ -7,7 +7,7 @@ html, body, #root, #root > div, [data-reactroot] {
 
 .mainHeader {
   display: block;
-  background: #f9feb2;
+  background: #fef8b2;
   padding: 25px;
   margin: 0;
   top: 0;
@@ -22,20 +22,37 @@ html, body, #root, #root > div, [data-reactroot] {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: flex-start;
+  width: 75%;
+  margin: auto;
   padding: 6px; }
   .hobbiesContainer .hobbyForm {
     display: block;
-    background: #b2fedf;
+    background: #9ce8c9;
     padding: 25px;
     margin: 6px;
-    padding-right: 150px; }
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    height: 60px; }
     .hobbiesContainer .hobbyForm .hobbyInput, .hobbiesContainer .hobbyForm .hobbySubmit {
       margin: 3px;
       height: 24px; }
-  .hobbiesContainer .hobbyList {
+    .hobbiesContainer .hobbyForm .hobbyInput {
+      width: 40%; }
+    .hobbiesContainer .hobbyForm .hobbySubmit {
+      background-color: ghostwhite;
+      color: dimgrey;
+      border-radius: 2px; }
+  .hobbiesContainer .hobbyListContainer {
     display: block;
-    background: #ddf5ff;
+    background: #c5eeff;
     padding: 25px;
-    margin: 6px; }
+    margin: 6px;
+    width: 50%; }
+    .hobbiesContainer .hobbyListContainer ul {
+      list-style: none; }
 
 /*# sourceMappingURL=styles.css.map */
